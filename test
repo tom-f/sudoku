@@ -1,0 +1,8 @@
+#!/usr/bin/env python
+import os
+import sys
+from sudoku.main import Main
+
+if __name__ == "__main__":
+    sudoku = Main() 
+    sudoku.run()
