@@ -9,4 +9,11 @@ class Grid:
 			row = self.grid[9*row:9*row+9]
 			print row
 
-	
+	def row(self, index):
+		pass
+
+	def coloumn(self, index):
+		pass
+
+	def square(self, index):
+		pass
