@@ -13,14 +13,14 @@ class TestGrid(unittest.TestCase):
 	def test_get_row_by_index(self):
 		"""Test correct row is returned for given index"""	
 		test_grid = self.load_grid_181()
-		result_row = test_grid.row(4)
+		result_row = test_grid.get_row(4)
 
 		self.assertEquals(result_row, range(28, 37))
 
 	def test_get_column_by_index(self):
 		"""Test correct column is returned for given index"""
 		test_grid = self.load_grid_181()
-		result_column = test_grid.column(2)
+		result_column = test_grid.get_column(2)
 
 		expected_column = range(2,82,9)
 
