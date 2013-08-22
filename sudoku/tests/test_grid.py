@@ -17,6 +17,15 @@ class TestGrid(unittest.TestCase):
 
 		self.assertEquals(result_row, range(28, 37))
 
+	def test_get_column_by_index(self):
+		"""Test correct column is returned for given index"""
+		test_grid = self.load_grid_181()
+		result_column = test_grid.column(2)
+
+		expected_column = range(2,82,9)
+
+		self.assertEquals(result_column, expected_column)
+
 	def load_grid_181(self):
 		""""Helper function to load a grid filled with values 1 to 81"""
 		test_grid = Grid()

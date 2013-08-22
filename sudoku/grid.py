@@ -17,14 +17,18 @@ class Grid:
 		return self.grid
 
 	def row(self, row_index):
-		"""Return requested row (numerated top down)"""
+		"""Return requested row (top down from 1)"""
 
 		# Because list indexing starts from 0
 		row_index = row_index-1
 		return self.grid[row_index*9:row_index*9+9]
 
-	def coloumn(self, index):
-		pass
+	def column(self, column_index):
+		"""Return requested column (left to right from 1)"""
+		
+		# Because list indexing starts from 0
+		column_index = column_index-1
+		return self.grid[column_index::9]
 
 	def square(self, index):
 		pass
