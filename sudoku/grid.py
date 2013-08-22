@@ -16,9 +16,12 @@ class Grid:
 	def get_grid(self):
 		return self.grid
 
-	def row(self, index):
-		row = index/9
-		return self.grid[row*9:row*9*9]
+	def row(self, row_index):
+		"""Return requested row (numerated top down)"""
+
+		# Because list indexing starts from 0
+		row_index = row_index-1
+		return self.grid[row_index*9:row_index*9+9]
 
 	def coloumn(self, index):
 		pass
