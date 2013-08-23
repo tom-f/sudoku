@@ -5,7 +5,7 @@ class Grid:
 		self.grid = [None] * 81
 
 	def load_data(self, data_string, separator=","):
-		"""Take string with values split by given seperator."""
+		"""Take string with values split by given separator."""
 		self.grid = [int(x) for x in data_string.split(separator)]
 
 	def print_grid(self):
@@ -30,5 +30,16 @@ class Grid:
 		column_index = column_index-1
 		return self.grid[column_index::9]
 
-	def get_square(self, index):
-		pass
+	def get_square(self, square_index):
+		"""Return requested sub square (from top left by row)"""
+
+		# Initial square position (top left) using tn = dn+(a-d) 
+		# with one extra because list index from 0
+		initial = (((3*square_index)-2)-1)
+
+		square = []
+
+		square.extend(self.grid[initial:initial+3])
+		square.extend(self.grid[initial+9:initial+12])
+		square.extend(self.grid[initial+18:initial+21])
+		return square

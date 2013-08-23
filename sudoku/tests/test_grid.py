@@ -22,9 +22,16 @@ class TestGrid(unittest.TestCase):
 		test_grid = self.load_grid_181()
 		result_column = test_grid.get_column(2)
 
-		expected_column = range(2,82,9)
+		self.assertEquals(result_column, range(2,82,9))
 
-		self.assertEquals(result_column, expected_column)
+	def test_get_square_by_index(self):
+		"""Test correct sub-square is returned for given index"""
+		test_grid = self.load_grid_181()
+		result_square = test_grid.get_square(1)
+
+		expected_square = [1, 2, 3, 10, 11, 12, 19, 20, 21]
+
+		self.assertEqual(result_square, expected_square)
 
 	def load_grid_181(self):
 		""""Helper function to load a grid filled with values 1 to 81"""
