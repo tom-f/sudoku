@@ -1,5 +1,3 @@
-from __future__ import print_function
-
 class Grid:
 
     def __init__(self):
@@ -8,20 +6,6 @@ class Grid:
     def load_data(self, data_string, separator=","):
         """Take string with values split by given separator."""
         self.grid = [(lambda x: int(x) if x != '' else 0)(x) for x in data_string.split(separator)]
-
-    def print_grid(self):
-        print("+---+---+---+---+---+---+---+---+---+")
-        for row in range(1,10):
-            self.print_row(self.get_row(row))
-
-    def print_row(self, row):
-        for index, elm in enumerate(row):
-            print("| ", end="")
-            print(elm, end="")
-            print(" ", end="")
-            if index == len(row)-1:
-                print("|")
-        print("+---+---+---+---+---+---+---+---+---+")
 
     def get_grid(self):
         return self.grid
