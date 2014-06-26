@@ -3,5 +3,9 @@ python:
   - "2.7"
 install: 
   - python setup.py develop
+  - pip install coveralls
 script: 
-  - nosetests
+  - nosetests --with-coverage
+after_success: 
+  - coveralls
+
