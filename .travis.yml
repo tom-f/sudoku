@@ -5,8 +5,7 @@ install:
   - python setup.py develop
   - pip install coveralls
 script: 
-  - nosetests
-  - coverage run --source=sudoku nosetests
+  - nosetests --with-coverage
 after_success: 
   - coveralls
 
